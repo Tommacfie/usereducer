@@ -24,7 +24,7 @@ npm i -D prettier
 
 3. copy a/the configuration from the .prettierrc.json file
 
-##Configure Eslint to work with Prettier:
+### Configure Eslint to work with Prettier:
 
 1. install the package:
 
