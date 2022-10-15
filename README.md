@@ -39,8 +39,10 @@ Add some scripts to package.json:
 1. copy the following:
 
 ```
+{
 "lint": "eslint --ext .js,.ts,.jsx,.tsx src",
 "format": "yarn run lint --fix & yarn prettier --write 'src/\*_/_.{js,jsx,ts,tsx}'"
+}
 ```
 
 ##Husky:
