@@ -1,6 +1,6 @@
-#Steps to set up the eslint and prettier config for React:
+# Steps to set up the eslint and prettier config for React:
 
-##Eslint:
+## Eslint:
 
 1. install eslint:
 
@@ -12,7 +12,7 @@ npm i -D eslint-config-react-app
 
 3. copy a/the configuration from the .eslintrc.json file
 
-##Prettier:
+## Prettier:
 
 1. install prettier:
 
@@ -45,7 +45,7 @@ Add some scripts to package.json:
 }
 ```
 
-##Husky:
+## Husky:
 
 1. install Husky with the automatic configuration:
 
