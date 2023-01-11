@@ -1,4 +1,5 @@
-import { ActionEnum, useMyContext } from '../hooks/context';
+import { useMyContext } from '../hooks/context';
+import { ActionEnum } from '../hooks/reducer';
 
 const ActionComponent = () => {
   const { state, dispatch } = useMyContext();
