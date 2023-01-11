@@ -1,20 +1,23 @@
-import {
+import React, {
   createContext,
-  Dispatch,
   ReactElement,
-  SetStateAction,
   useContext,
-  useState,
+  useReducer,
 } from 'react';
 
 export type MyContextType = {
-  myState: number;
-  setMyState: Dispatch<SetStateAction<number>>;
+  state: number;
+  dispatch: React.Dispatch<ActionEnum>;
 };
 
+export enum ActionEnum {
+  INCREASE = 'INCREASE',
+  DECREASE = 'DECREASE',
+}
+
 const MyContext = createContext<MyContextType>({
-  myState: 0,
-  setMyState: () => {},
+  state: 0,
+  dispatch: () => {},
 });
 
 export const MyContextProvider = ({
@@ -22,9 +25,25 @@ export const MyContextProvider = ({
 }: {
   children: ReactElement[];
 }) => {
-  const [myState, setMyState] = useState(0);
+  const myReducer = (state: number, action: ActionEnum) => {
+    let newState;
+    switch (action) {
+      case ActionEnum.INCREASE:
+        newState = state + 1;
+        break;
+      case ActionEnum.DECREASE:
+        newState = state - 1;
+        break;
+      default:
+        newState = state;
+    }
+    return newState;
+  };
+
+  const [state, dispatch] = useReducer(myReducer, 0);
+
   return (
-    <MyContext.Provider value={{ myState, setMyState }}>
+    <MyContext.Provider value={{ state, dispatch }}>
       {children}
     </MyContext.Provider>
   );

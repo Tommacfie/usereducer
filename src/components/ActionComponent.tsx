@@ -1,25 +1,25 @@
 import React from 'react';
-import { useMyContext } from '../hooks/context';
+import { ActionEnum, useMyContext } from '../hooks/context';
 
 const ActionComponent = () => {
-  const { myState, setMyState } = useMyContext();
+  const { state, dispatch } = useMyContext();
   return (
     <>
       <button
         onClick={() => {
-          setMyState((prev) => prev + 1);
+          dispatch(ActionEnum.INCREASE);
         }}
       >
         Increment
       </button>
       <button
         onClick={() => {
-          setMyState((prev) => prev - 1);
+          dispatch(ActionEnum.DECREASE);
         }}
       >
         Decrement
       </button>
-      <div>Value: {myState}</div>
+      <div>Value: {state}</div>
     </>
   );
 };
