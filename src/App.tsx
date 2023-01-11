@@ -1,5 +1,15 @@
+import ActionComponent from './components/ActionComponent';
+import { MyContextProvider } from './hooks/context';
+
 const App = () => {
-  return <div>Programmin'</div>;
+  return (
+    <>
+      <MyContextProvider>
+        <div>Context</div>
+        <ActionComponent />
+      </MyContextProvider>
+    </>
+  );
 };
 
 export default App;

@@ -4,5 +4,8 @@
     "plugin:@typescript-eslint/recommended",
     "react-app",
     "prettier"
-  ]
+  ],
+  "rules": {
+    "@typescript-eslint/no-empty-function": "off"
+  }
 }
